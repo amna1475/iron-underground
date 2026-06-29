@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iron Underground Gym — Houston, TX</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            red:     '#E8152A',
+            reddim:  '#9B0E1C',
+            char:    '#0E0E0E',
+            dark:    '#161616',
+            mid:     '#222222',
+            muted:   '#3A3A3A',
+            smoke:   '#888888',
+            fog:     '#BBBBBB',
+            offwhite:'#F2F2F2',
+            gold:    '#C9973A',
+          },
+          fontFamily: {
+            display: ['"Bebas Neue"', 'sans-serif'],
+            head:    ['"Oswald"', 'sans-serif'],
+            body:    ['"Inter"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-char text-fog font-body overflow-x-hidden">
+
+  <!-- ── NAVBAR ── -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 h-16 bg-black/90 backdrop-blur border-b border-red/20">
+    <a href="#hero" class="font-display text-2xl tracking-widest text-offwhite">IRON <span class="text-red">UNDERGROUND</span></a>
+
+    <!-- Desktop links -->
+    <ul class="hidden md:flex items-center gap-7 list-none">
+      <li><a href="#about"      class="nav-link">About</a></li>
+      <li><a href="#classes"    class="nav-link">Classes</a></li>
+      <li><a href="#trainers"   class="nav-link">Trainers</a></li>
+      <li><a href="#schedule"   class="nav-link">Schedule</a></li>
+      <li><a href="#membership" class="nav-link">Pricing</a></li>
+      <li><a href="#contact"    class="nav-link">Contact</a></li>
+      <li><a href="#membership" class="nav-cta-btn">Join Now</a></li>
+    </ul>
+
+    <!-- Hamburger -->
+    <button id="hamburger" class="md:hidden flex flex-col gap-1.5 cursor-pointer" aria-label="Menu">
+      <span class="block w-6 h-0.5 bg-offwhite"></span>
+      <span class="block w-6 h-0.5 bg-offwhite"></span>
+      <span class="block w-6 h-0.5 bg-offwhite"></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden fixed top-16 left-0 right-0 z-40 bg-char border-b border-muted py-6 px-6 flex-col gap-4">
+    <a href="#about"      class="nav-link block" onclick="closeMobileMenu()">About</a>
+    <a href="#classes"    class="nav-link block" onclick="closeMobileMenu()">Classes</a>
+    <a href="#trainers"   class="nav-link block" onclick="closeMobileMenu()">Trainers</a>
+    <a href="#schedule"   class="nav-link block" onclick="closeMobileMenu()">Schedule</a>
+    <a href="#membership" class="nav-link block" onclick="closeMobileMenu()">Pricing</a>
+    <a href="#contact"    class="nav-link block" onclick="closeMobileMenu()">Contact</a>
+    <a href="#membership" class="nav-cta-btn text-center mt-2" onclick="closeMobileMenu()">Join Now</a>
+  </div>
+
+
+  <!-- ── HERO ── -->
+  <section id="hero" class="min-h-screen flex items-center overflow-hidden bg-char pt-16">
+    <!-- Background image with overlay -->
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80')] bg-center bg-cover">
+      <div class="absolute inset-0 bg-gradient-to-r from-black/95 via-black/75 to-black/40"></div>
+    </div>
+
+    <div class="absolute right-0 top-1/2 -translate-y-1/2 font-display text-[20vw] text-transparent pointer-events-none select-none leading-none" style="color: transparent; -webkit-text-stroke: 1px rgba(232,21,42,0.1);">IRON</div>
+
+    <div class="relative z-10 px-6 md:px-12 max-w-3xl hero-content">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="block w-8 h-0.5 bg-red"></span>
+        <span class="font-head text-xs tracking-[0.28em] uppercase text-red">Houston, TX · Est. 2011</span>
+      </div>
+      <h1 class="font-display text-7xl md:text-[9rem] leading-none text-offwhite tracking-wide mb-5">
+        BUILT IN THE<br><span class="text-red">UNDERGROUND</span>
+      </h1>
+      <p class="text-fog font-light text-lg max-w-md mb-8 leading-relaxed">No mirrors. No fluff. Just raw iron, serious athletes, and a community that pushes harder than anywhere else in Houston.</p>
+      <div class="flex gap-5 flex-wrap mt-10">
+        <a href="#membership" class="btn-primary">Start Training</a>
+        <a href="#classes"    class="btn-outline">See Programs</a>
+      </div>
+    </div>
+    <hr>
+
+    <!-- Stats bar -->
+    <div class="bottom-10 left-6 md:left-12 right-6 flex flex-wrap gap-8 md:gap-12 border-t border-muted pt-6 z-10 mt-40 reveal">
+      <div>
+        <div class="font-display text-4xl text-offwhite leading-none">12<span class="text-red">+</span></div>
+        <div class="text-xs tracking-[0.2em] uppercase text-smoke mt-1">Years Underground</div>
+      </div>
+      <div>
+        <div class="font-display text-4xl text-offwhite leading-none">2<span class="text-red">k</span></div>
+        <div class="text-xs tracking-[0.2em] uppercase text-smoke mt-1">Active Members</div>
+      </div>
+      <div>
+        <div class="font-display text-4xl text-offwhite leading-none">18</div>
+        <div class="text-xs tracking-[0.2em] uppercase text-smoke mt-1">Expert Trainers</div>
+      </div>
+      <div>
+        <div class="font-display text-4xl text-offwhite leading-none">24<span class="text-red">/7</span></div>
+        <div class="text-xs tracking-[0.2em] uppercase text-smoke mt-1">Access Available</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── ABOUT ── -->
+  <section id="about" class="bg-dark px-6 md:px-12 py-24 reveal">
+    <div class="section-eyebrow">Who We Are</div>
+    <div class="grid md:grid-cols-2 gap-12 items-center mt-10">
+      <!-- Image -->
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80"
+             alt="Iron Underground interior"
+             class="w-full rounded grayscale-[30%] contrast-110 block"
+             loading="lazy">
+        <div class="absolute bottom-[-1rem] right-[-1rem] bg-red text-offwhite font-display text-base tracking-widest px-5 py-3 rounded">Est. 2011 · Houston, TX</div>
+      </div>
+      <!-- Text -->
+      <div>
+        <h2 class="section-title">REAL IRON.<br>REAL RESULTS.</h2>
+        <p class="text-fog leading-loose mb-4">Iron Underground was born in a warehouse on the south side of Houston by lifters who were tired of commercial gyms built for selfies. We set the weights down and built something different — a place where barbells bend and egos don't.</p>
+        <p class="text-fog leading-loose mb-6">Over a decade later, we've produced powerlifting champions, IFBB pros, and thousands of everyday athletes who just wanted to get seriously strong.</p>
+        <ul class="flex flex-col gap-3">
+          <li class="feature-item">30,000 sq ft of hardcore training floor space</li>
+          <li class="feature-item">Professional powerlifting platforms with Eleiko and Texas bars</li>
+          <li class="feature-item">Dedicated strongman yard with competition implements</li>
+          <li class="feature-item">On-site nutrition bar and recovery lounge</li>
+          <li class="feature-item">24/7 member access with keycard entry</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── CLASSES ── -->
+  <section id="classes" class="bg-char px-6 md:px-12 py-24 reveal">
+    <div class="section-eyebrow">Programs</div>
+    <h2 class="section-title">TRAIN WITH<br>PURPOSE</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="class-card">
+        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&q=80" alt="Powerlifting" class="class-img" loading="lazy">
+        <div class="p-5">
+          <div class="class-tag">Strength</div>
+          <div class="class-name">Powerlifting Fundamentals</div>
+          <p class="text-smoke text-sm leading-relaxed">Squat, bench, deadlift — mastered with coaching cues, form checks, and progressive overload every session.</p>
+          <div class="flex gap-4 mt-3 text-smoke text-xs">
+            <span>⏱ 75 min</span><span>👥 Max 12</span><span>📊 All levels</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="class-card">
+        <img src="https://images.unsplash.com/photo-1534367990512-edbdca781b00?w=600&q=80" alt="Olympic lifting" class="class-img" loading="lazy">
+        <div class="p-5">
+          <div class="class-tag">Olympic</div>
+          <div class="class-name">Olympic Weightlifting</div>
+          <p class="text-smoke text-sm leading-relaxed">Snatch and clean &amp; jerk technique coached by certified USAW coaches in a fully equipped lifting room.</p>
+          <div class="flex gap-4 mt-3 text-smoke text-xs">
+            <span>⏱ 90 min</span><span>👥 Max 8</span><span>📊 Intermediate+</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="class-card">
+        <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=600&q=80" alt="Strongman" class="class-img" loading="lazy">
+        <div class="p-5">
+          <div class="class-tag">Strongman</div>
+          <div class="class-name">Strongman Saturday</div>
+          <p class="text-smoke text-sm leading-relaxed">Atlas stones, yoke carries, log press, and farmer walks. Real events. Real people getting stronger every week.</p>
+          <div class="flex gap-4 mt-3 text-smoke text-xs">
+            <span>⏱ 2 hrs</span><span>👥 Open</span><span>📊 All levels</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="class-card">
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=80" alt="Conditioning" class="class-img" loading="lazy">
+        <div class="p-5">
+          <div class="class-tag">Conditioning</div>
+          <div class="class-name">Iron Cardio</div>
+          <p class="text-smoke text-sm leading-relaxed">Sled drags, battle ropes, and kettlebell circuits designed to build conditioning without sacrificing muscle.</p>
+          <div class="flex gap-4 mt-3 text-smoke text-xs">
+            <span>⏱ 45 min</span><span>👥 Max 20</span><span>📊 All levels</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="class-card">
+        <img src="https://images.unsplash.com/photo-1584466977773-e625c37cdd50?w=600&q=80" alt="Bodybuilding" class="class-img" loading="lazy">
+        <div class="p-5">
+          <div class="class-tag">Aesthetics</div>
+          <div class="class-name">Hypertrophy Blueprint</div>
+          <p class="text-smoke text-sm leading-relaxed">Science-based hypertrophy training for bodybuilders and physique athletes targeting maximum muscle growth.</p>
+          <div class="flex gap-4 mt-3 text-smoke text-xs">
+            <span>⏱ 60 min</span><span>👥 Max 15</span><span>📊 Intermediate</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="class-card">
+        <img src="https://images.unsplash.com/photo-1604480132736-44c188fe4d20?w=600&q=80" alt="Personal training" class="class-img" loading="lazy">
+        <div class="p-5">
+          <div class="class-tag">1-on-1</div>
+          <div class="class-name">Personal Training</div>
+          <p class="text-smoke text-sm leading-relaxed">Fully customized programming with one of our 18 certified trainers. Your goals, your pace, your results.</p>
+          <div class="flex gap-4 mt-3 text-smoke text-xs">
+            <span>⏱ 60 min</span><span>👥 Private</span><span>📊 Any level</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── TRAINERS ── -->
+  <section id="trainers" class="cards bg-dark px-6 md:px-12 py-24 reveal">
+    <div class="section-eyebrow">Our Coaches</div>
+    <h2 class="section-title">TRAINED BY<br>THE BEST</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-10">
+
+      <div class="trainer-card">
+        <div class="relative inline-block mb-4">
+          <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=400&q=80" alt="Marcus Cole" class="trainer-img" loading="lazy">
+          <div class="trainer-badge">Head Coach</div>
+        </div>
+        <div class="font-head font-semibold text-offwhite">Marcus Cole</div>
+        <div class="text-smoke text-sm mt-1">Powerlifting · CSCS</div>
+      </div>
+
+      <div class="trainer-card">
+        <div class="relative inline-block mb-4">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.Si1RGbQrStJdd3HFZwOprgHaE8?pid=Api&h=220&P=0" alt="Diana Reeves" class="trainer-img" loading="lazy">
+          <div class="trainer-badge">USAW L2</div>
+        </div>
+        <div class="font-head font-semibold text-offwhite">Diana Reeves</div>
+        <div class="text-smoke text-sm mt-1">Olympic Lifting</div>
+      </div>
+
+      <div class="trainer-card">
+        <div class="relative inline-block mb-4">
+          <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&q=80" alt="Andre Tatum" class="trainer-img" loading="lazy">
+          <div class="trainer-badge">Pro Strongman</div>
+        </div>
+        <div class="font-head font-semibold text-offwhite">Andre Tatum</div>
+        <div class="text-smoke text-sm mt-1">Strongman · Conditioning</div>
+      </div>
+
+      <div class="trainer-card">
+        <div class="relative inline-block mb-4">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80" alt="Priya Santos" class="trainer-img" loading="lazy">
+          <div class="trainer-badge">IFBB Pro</div>
+        </div>
+        <div class="font-head font-semibold text-offwhite">Priya Santos</div>
+        <div class="text-smoke text-sm mt-1">Bodybuilding · Nutrition</div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── BMI CALCULATOR ── -->
+  <section id="bmi" class="bg-char px-6 md:px-12 py-24 reveal">
+    <div class="section-eyebrow">Tools</div>
+    <h2 class="section-title text-center">BMI CALCULATOR</h2>
+    <div class="max-w-xl mx-auto bg-dark border border-muted rounded p-8 mt-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+        <div>
+          <label class="field-label" for="bmi-height">Height (cm)</label>
+          <input type="number" id="bmi-height" placeholder="e.g. 178" min="100" max="250" class="field-input">
+        </div>
+        <div>
+          <label class="field-label" for="bmi-weight">Weight (kg)</label>
+          <input type="number" id="bmi-weight" placeholder="e.g. 82" min="30" max="300" class="field-input">
+        </div>
+      </div>
+      <button onclick="calcBMI()" class="w-full bg-red hover:bg-reddim text-offwhite font-head tracking-widest uppercase py-3 rounded transition-colors">
+        Calculate My BMI
+      </button>
+
+      <!-- Result -->
+      <div id="bmi-result" class="hidden mt-6 text-center bg-muted/40 rounded p-5">
+        <div id="bmi-score-val" class="font-display text-6xl text-offwhite leading-none">—</div>
+        <div id="bmi-cat-val"   class="font-head uppercase tracking-widest text-red mt-2">—</div>
+        <div class="mx-auto mt-4 max-w-xs h-1.5 bg-char rounded overflow-hidden">
+          <div id="bmi-bar" class="h-full bg-red rounded transition-all duration-500" style="width:0%"></div>
+        </div>
+        <div id="bmi-tip" class="text-smoke text-sm mt-3"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── SCHEDULE ── -->
+  <section id="schedule" class="bg-dark px-6 md:px-12 py-24 reveal">
+    <div class="section-eyebrow">Timetable</div>
+    <h2 class="section-title">CLASS SCHEDULE</h2>
+
+    <!-- Tabs -->
+    <div class="flex flex-wrap gap-0 mt-8 mb-6">
+      <button class="tab-btn active" data-day="mon">Mon</button>
+      <button class="tab-btn" data-day="tue">Tue</button>
+      <button class="tab-btn" data-day="wed">Wed</button>
+      <button class="tab-btn" data-day="thu">Thu</button>
+      <button class="tab-btn" data-day="fri">Fri</button>
+      <button class="tab-btn" data-day="sat">Sat</button>
+      <button class="tab-btn" data-day="sun">Sun</button>
+    </div>
+
+    <!-- Table wrapper (scrollable on mobile) -->
+    <div class="overflow-x-auto">
+      <table class="schedule-table w-full" id="schedule-table">
+        <thead>
+          <tr>
+            <th>Time</th><th>Class</th><th>Trainer</th><th>Duration</th><th>Spots</th>
+          </tr>
+        </thead>
+        <tbody id="schedule-body">
+          <!-- filled by JS -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+
+  <!-- ── MEMBERSHIP ── -->
+  <section id="membership" class="bg-char px-6 md:px-12 py-24 reveal">
+    <div class="section-eyebrow">Pricing</div>
+    <h2 class="section-title">CHOOSE YOUR<br>PLAN</h2>
+    <p class="text-fog max-w-md leading-loose mb-12">No contracts, no hidden fees. Cancel anytime. Just show up and lift.</p>
+
+    <div class="grid sm:grid-cols-3 gap-6 items-start">
+
+      <!-- Day Pass -->
+      <div class="plan-card">
+        <div class="font-head text-xs tracking-widest uppercase text-smoke mb-4">Day Pass</div>
+        <div class="flex items-start gap-1 mb-5">
+          <span class="font-head text-xl text-fog pt-2">$</span>
+          <span class="font-display text-7xl text-offwhite leading-none">15</span>
+          <span class="text-smoke text-sm self-end pb-2">/ visit</span>
+        </div>
+        <ul class="plan-features mb-7">
+          <li class="check">Full gym floor access</li>
+          <li class="check">Group class (1 session)</li>
+          <li class="cross">Personal locker</li>
+          <li class="cross">24/7 key card access</li>
+          <li class="cross">Guest privileges</li>
+          <li class="cross">Nutrition consultation</li>
+        </ul>
+        <button class="plan-btn-outline w-full" onclick="alert('Redirecting to purchase…')">Buy Pass</button>
+      </div>
+
+      <!-- Monthly (featured) -->
+      <div class="plan-card border-red relative" style="background: linear-gradient(160deg, rgba(232,21,42,0.07) 0%, #161616 60%)">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-red text-offwhite font-head text-xs tracking-widest uppercase px-4 py-1 rounded-b">Most Popular</div>
+        <div class="font-head text-xs tracking-widest uppercase text-smoke mb-4 mt-4">Monthly Member</div>
+        <div class="flex items-start gap-1 mb-5">
+          <span class="font-head text-xl text-fog pt-2">$</span>
+          <span class="font-display text-7xl text-offwhite leading-none">59</span>
+          <span class="text-smoke text-sm self-end pb-2">/ month</span>
+        </div>
+        <ul class="plan-features mb-7">
+          <li class="check">Unlimited gym access</li>
+          <li class="check">Unlimited group classes</li>
+          <li class="check">Personal locker</li>
+          <li class="check">24/7 key card access</li>
+          <li class="check">1 guest pass / month</li>
+          <li class="cross">Nutrition consultation</li>
+        </ul>
+        <button class="plan-btn-solid w-full" onclick="alert('Redirecting to sign up…')">Join Now</button>
+      </div>
+
+      <!-- Annual -->
+      <div class="plan-card">
+        <div class="font-head text-xs tracking-widest uppercase text-smoke mb-4">Elite Annual</div>
+        <div class="flex items-start gap-1 mb-5">
+          <span class="font-head text-xl text-fog pt-2">$</span>
+          <span class="font-display text-7xl text-offwhite leading-none">49</span>
+          <span class="text-smoke text-sm self-end pb-2">/ month</span>
+        </div>
+        <ul class="plan-features mb-7">
+          <li class="check">Unlimited gym access</li>
+          <li class="check">Unlimited group classes</li>
+          <li class="check">Personal locker</li>
+          <li class="check">24/7 key card access</li>
+          <li class="check">Unlimited guest passes</li>
+          <li class="check">Monthly nutrition consult</li>
+        </ul>
+        <button class="plan-btn-outline w-full" onclick="alert('Redirecting to sign up…')">Go Annual</button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── TESTIMONIALS ── -->
+  <section id="testimonials" class="bg-dark px-6 md:px-12 py-24 reveal">
+    <div class="section-eyebrow">Community</div>
+    <h2 class="section-title">WHAT MEMBERS<br>SAY</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
+
+      <div class="testi-card">
+        <div class="text-gold tracking-widest mb-3">★★★★★</div>
+        <p class="text-fog text-sm leading-loose italic mb-5">"Marcus and the team turned my deadlift from 225 to 405 in under a year. The programming here is legitimate, no gimmicks."</p>
+        <div class="flex items-center gap-3">
+          <div class="avatar">JR</div>
+          <div>
+            <div class="font-head text-offwhite text-sm">Jordan R.</div>
+            <div class="text-smoke text-xs">Member since 2021 · Powerlifter</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="text-gold tracking-widest mb-3">★★★★★</div>
+        <p class="text-fog text-sm leading-loose italic mb-5">"I've trained at gyms across Houston and nothing compares. The community, the equipment, the coaching — it's the real deal."</p>
+        <div class="flex items-center gap-3">
+          <div class="avatar">KM</div>
+          <div>
+            <div class="font-head text-offwhite text-sm">Keisha M.</div>
+            <div class="text-smoke text-xs">Member since 2020 · IFBB Competitor</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="text-gold tracking-widest mb-3">★★★★★</div>
+        <p class="text-fog text-sm leading-loose italic mb-5">"Diana got me snatching 95kg in 6 months. If you're serious about Olympic lifting in Houston, there's only one place to go."</p>
+        <div class="flex items-center gap-3">
+          <div class="avatar">TN</div>
+          <div>
+            <div class="font-head text-offwhite text-sm">Thomas N.</div>
+            <div class="text-smoke text-xs">Member since 2022 · Olympic Lifter</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="text-gold tracking-widest mb-3">★★★★★</div>
+        <p class="text-fog text-sm leading-loose italic mb-5">"Strongman Saturday is one of the best kept secrets in Houston. Andre runs it like a competition — you leave every week a little tougher."</p>
+        <div class="flex items-center gap-3">
+          <div class="avatar">LP</div>
+          <div>
+            <div class="font-head text-offwhite text-sm">Luis P.</div>
+            <div class="text-smoke text-xs">Member since 2019 · Strongman</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="text-gold tracking-widest mb-3">★★★★★</div>
+        <p class="text-fog text-sm leading-loose italic mb-5">"I walked in a complete beginner, nervous and unsure. Within two weeks I felt like I belonged. The culture here is unlike anywhere else."</p>
+        <div class="flex items-center gap-3">
+          <div class="avatar">AS</div>
+          <div>
+            <div class="font-head text-offwhite text-sm">Ava S.</div>
+            <div class="text-smoke text-xs">Member since 2023 · Beginner</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="text-gold tracking-widest mb-3">★★★★★</div>
+        <p class="text-fog text-sm leading-loose italic mb-5">"The equipment is top tier — Eleiko bars, calibrated plates, competition benches. Worth every penny of the membership."</p>
+        <div class="flex items-center gap-3">
+          <div class="avatar">CM</div>
+          <div>
+            <div class="font-head text-offwhite text-sm">Carlos M.</div>
+            <div class="text-smoke text-xs">Member since 2018 · Coach</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── FAQ ── -->
+  <section id="faq" class="bg-char px-6 md:px-12 py-24 reveal">
+    <div class="section-eyebrow">FAQ</div>
+    <h2 class="section-title text-center">COMMON<br>QUESTIONS</h2>
+    <div class="max-w-2xl mx-auto mt-10 flex flex-col gap-3">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do I need experience to train here? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Not at all. While our gym attracts serious lifters, we welcome everyone from complete beginners to elite competitors. Our Powerlifting Fundamentals class is specifically designed as an entry point — no experience needed.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Is there a contract or minimum commitment? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">No contracts, ever. Monthly memberships can be cancelled anytime before the next billing date. The Annual Elite plan is paid upfront or in quarterly installments, with a prorated refund policy.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Can I book a tour before joining? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Absolutely. Drop in during staffed hours (Mon–Sat before 7 PM) or use the contact form to book a dedicated tour with a team member who can walk you through the facility, classes, and pricing.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What equipment does the gym have? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">We run Eleiko and Texas Power Bars, calibrated competition plates, 12 squat racks, full strongman yard, 8 Olympic platforms, and a dedicated GPP/cardio area. No cardio theater, no fluff.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do you offer student or military discounts? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Yes — we offer a 15% discount on monthly memberships for verified students, active military, and first responders. Bring valid ID to the front desk or contact us for the discount code.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Is there parking available? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Yes, we have a large free parking lot with 80+ spaces. The entrance is off South Loop E. Street parking is also available along the adjacent block.</div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── CONTACT ── -->
+  <section id="contact" class="bg-dark px-6 md:px-12 py-24 reveal">
+    <div class="section-eyebrow">Find Us</div>
+    <h2 class="section-title">GET IN TOUCH</h2>
+    <div class="grid md:grid-cols-2 gap-12 mt-10 items-start">
+
+      <!-- Info -->
+      <div class="flex flex-col gap-7">
+        <div>
+          <div class="contact-label">Address</div>
+          <div class="text-fog">4200 South Loop E<br>Houston, TX 77087</div>
+        </div>
+        <div>
+          <div class="contact-label">Hours</div>
+          <div class="text-fog leading-loose">
+            Mon–Fri: 5:00 AM – 11:00 PM<br>
+            Sat: 7:00 AM – 9:00 PM<br>
+            Sun: 8:00 AM – 6:00 PM<br>
+            <span class="text-red text-sm">Members: 24/7 Keycard Access</span>
+          </div>
+        </div>
+        <div>
+          <div class="contact-label">Phone</div>
+          <div class="text-fog">(713) 555-0182</div>
+        </div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="text-fog">info@ironundergroundgym.com</div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <form onsubmit="submitForm(event)" class="flex flex-col gap-4">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <input type="text" placeholder="First Name" required class="form-input">
+          <input type="text" placeholder="Last Name"  required class="form-input">
+        </div>
+        <input type="email" placeholder="Email Address" required class="form-input">
+        <input type="tel"   placeholder="Phone (optional)" class="form-input">
+        <select class="form-input text-smoke">
+          <option value="">I'm interested in…</option>
+          <option>General Membership</option>
+          <option>Personal Training</option>
+          <option>Group Classes</option>
+          <option>Nutrition Consultation</option>
+          <option>Facility Tour</option>
+        </select>
+        <textarea placeholder="Your message…" rows="4" class="form-input resize-none"></textarea>
+        <button type="submit" class="btn-primary self-start">Send Message</button>
+        <div id="form-success" class="hidden text-green-400 text-sm py-1">✅ Message sent! We'll get back to you within 24 hours.</div>
+      </form>
+
+    </div>
+  </section>
+
+
+  <!-- ── FOOTER ── -->
+  <footer class="bg-[#080808] border-t border-muted px-6 md:px-12 pt-14 pb-8 reveal">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-10">
+      <div class="col-span-2 md:col-span-1">
+        <span class="font-display text-3xl text-offwhite tracking-wider block mb-3">IRON <span class="text-red">UNDERGROUND</span></span>
+        <p class="text-smoke text-sm leading-relaxed max-w-xs">Houston's premier hardcore training facility. No fluff. Just iron, sweat, and results since 2011.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="flex flex-col gap-2">
+          <li><a href="#about"      class="footer-link">About Us</a></li>
+          <li><a href="#classes"    class="footer-link">Programs</a></li>
+          <li><a href="#trainers"   class="footer-link">Trainers</a></li>
+          <li><a href="#schedule"   class="footer-link">Schedule</a></li>
+          <li><a href="#membership" class="footer-link">Membership</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Programs</div>
+        <ul class="flex flex-col gap-2">
+          <li><a href="#classes" class="footer-link">Powerlifting</a></li>
+          <li><a href="#classes" class="footer-link">Olympic Lifting</a></li>
+          <li><a href="#classes" class="footer-link">Strongman</a></li>
+          <li><a href="#classes" class="footer-link">Hypertrophy</a></li>
+          <li><a href="#classes" class="footer-link">Personal Training</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="flex flex-col gap-2">
+          <li><a href="tel:7135550182"               class="footer-link">(713) 555-0182</a></li>
+          <li><a href="mailto:info@ironundergroundgym.com" class="footer-link">info@ironunderground...</a></li>
+          <li><a href="#contact"                     class="footer-link">4200 South Loop E, TX</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-muted pt-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-smoke text-xs">
+      <span>© 2025 Iron Underground Gym · Houston, TX · All Rights Reserved</span>
+      <span>
+        <a href="#" class="hover:text-red transition-colors">Privacy Policy</a> ·
+        <a href="#" class="hover:text-red transition-colors">Terms of Use</a>
+      </span>
+    </div>
+  </footer>
+
+
+  <!-- Back to Top -->
+  <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    class="fixed bottom-6 right-6 z-50 w-11 h-11 bg-red hover:bg-reddim text-white flex items-center justify-center rounded opacity-0 pointer-events-none transition-opacity text-lg"
+    aria-label="Back to top">↑</button>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>

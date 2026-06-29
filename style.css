@@ -1,0 +1,721 @@
+/* ============================================================
+   Iron Underground Gym — style.css
+   Colors as plain hex (no CSS custom properties needed since
+   Tailwind handles most styling; these are for reusable
+   component classes only)
+   ============================================================ */
+
+/* ── BASE ── */
+html {
+  scroll-behavior: smooth;
+  
+}
+/* =======================
+      HERO ANIMATION
+======================= */
+
+.hero-content{
+
+    animation:heroFade 1.2s ease;
+
+}
+
+@keyframes heroFade{
+
+0%{
+
+opacity:0;
+
+transform:translateY(60px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* =======================
+      HERO GLOW
+======================= */
+
+#hero{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+#hero::before{
+
+content:"";
+
+position:absolute;
+
+width:450px;
+
+height:450px;
+
+background:#E8152A;
+
+filter:blur(180px);
+
+opacity:.12;
+
+right:-150px;
+
+top:80px;
+
+animation:floatGlow 8s ease-in-out infinite;
+
+}
+
+@keyframes floatGlow{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-30px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+/* ── NAV LINKS ── */
+.nav-link{
+
+    position:relative;
+
+    font-family:'Oswald',sans-serif;
+
+    font-size:.8rem;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+    color:#BBBBBB;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.nav-link::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-7px;
+
+    width:0;
+
+    height:2px;
+
+    background:#E8152A;
+
+    transition:.35s;
+
+}
+
+.nav-link:hover{
+
+    color:#E8152A;
+
+}
+
+.nav-link:hover::after{
+
+    width:100%;
+
+}
+
+.nav-cta-btn {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: #E8152A;
+  color: #F2F2F2;
+  padding: 0.4rem 1rem;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.nav-cta-btn:hover {
+  background: #9B0E1C;
+}
+
+/* ── BUTTONS ── */
+.btn-primary {
+  display: inline-block;
+  background: #E8152A;
+  color: #F2F2F2;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.85rem 2rem;
+  border-radius: 2px;
+  border: 2px solid #E8152A;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* =========================
+   Scroll Reveal Animation
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(70px);
+    transition: all 0.9s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: #F2F2F2;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.85rem 2rem;
+  border-radius: 2px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: border-color 0.2s;
+}
+.btn-primary,
+.btn-outline{
+
+    transition:all .35s ease;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 30px rgba(232,21,42,.4);
+
+}
+
+.btn-outline:hover{
+
+    transform:translateY(-4px);
+
+    border-color:#E8152A;
+
+    color:#E8152A;
+
+}
+/* ── SECTION EYEBROW ── */
+.section-eyebrow {
+  text-align: center;
+  gap: 0.6rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #E8152A;
+  margin-bottom: 0.9rem;
+}
+.section-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #E8152A;
+  flex-shrink: 0;
+}
+
+/* ── SECTION TITLE ── */
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 5vw, 60px);
+  color: #F2F2F2;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+/* ── ABOUT FEATURES ── */
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  font-size: 0.92rem;
+  color: #BBBBBB;
+}
+.feature-item::before {
+  content: '▸';
+  color: #E8152A;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+/* ── CLASS CARDS ── */
+.class-card {
+  background: #161616;
+  border: 1px solid #3A3A3A;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.class-card:hover {
+  border-color: #E8152A;
+  transform: translateY(-4px);
+}
+.class-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  filter: grayscale(40%) brightness(0.85);
+  display: block;
+}
+.class-tag {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #E8152A;
+  margin-bottom: 0.4rem;
+}
+.class-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #F2F2F2;
+  margin-bottom: 0.5rem;
+}
+
+/* ── TRAINERS ── */
+.trainer-card {
+  text-align: center;
+}
+.trainer-img {
+  max-width: 160px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 2px;
+  border: 2px solid white;
+  filter: grayscale(20%);
+  display: block;
+}
+.trainer-badge {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #E8152A;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #F2F2F2;
+  padding: 0.2rem 0.6rem;
+  white-space: nowrap;
+  border-radius: 2px;
+}
+
+/* ── BMI INPUTS ── */
+.field-label {
+  display: block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #888888;
+  margin-bottom: 0.4rem;
+}
+.field-input {
+  width: 100%;
+  background: #3A3A3A;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  padding: 0.7rem 1rem;
+  color: #F2F2F2;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.field-input:focus {
+  border-color: #E8152A;
+}
+
+/* ── SCHEDULE TABLE ── */
+.tab-btn {
+  background: #3A3A3A;
+  border: none;
+  color: #888888;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.tab-btn:first-child {
+  border-radius: 2px 0 0 2px;
+}
+.tab-btn:last-child {
+  border-radius: 0 2px 2px 0;
+}
+.tab-btn.active {
+  background: #E8152A;
+  color: #F2F2F2;
+}
+.tab-btn:hover:not(.active) {
+  background: #0E0E0E;
+  color: #BBBBBB;
+}
+
+.schedule-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.schedule-table th {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #888888;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #3A3A3A;
+}
+.schedule-table td {
+  padding: 0.9rem 1rem;
+  font-size: 0.9rem;
+  color: #BBBBBB;
+  border-bottom: 1px solid rgba(58, 58, 58, 0.5);
+  white-space: nowrap;
+}
+.schedule-table tr:hover td {
+  background: rgba(232, 21, 42, 0.05);
+}
+.sched-badge {
+  display: inline-block;
+  background: rgba(232, 21, 42, 0.15);
+  color: #E8152A;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+}
+
+/* ── MEMBERSHIP PLANS ── */
+.plan-card {
+  border: 1px solid #3A3A3A;
+  border-radius: 4px;
+  padding: 2rem 1.75rem;
+  background: #161616;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.plan-card:hover {
+  border-color: #E8152A;
+  transform: translateY(-4px);
+}
+.plan-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: #BBBBBB;
+}
+.plan-features li.check::before {
+  content: '✓';
+  color: #E8152A;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.plan-features li.cross {
+  color: #3A3A3A;
+}
+.plan-features li.cross::before {
+  content: '✗';
+  color: #3A3A3A;
+  flex-shrink: 0;
+}
+.plan-btn-outline {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.75rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  border: 2px solid #3A3A3A;
+  color: #BBBBBB;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.plan-btn-outline:hover {
+  border-color: #E8152A;
+  color: #E8152A;
+}
+.plan-btn-solid {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.75rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  border: 2px solid #E8152A;
+  color: #F2F2F2;
+  background: #E8152A;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.plan-btn-solid:hover {
+  background: #9B0E1C;
+  border-color: #9B0E1C;
+}
+
+/* ── TESTIMONIALS ── */
+.testi-card {
+  background: #0E0E0E;
+  border: 1px solid #3A3A3A;
+  border-radius: 4px;
+  padding: 1.75rem;
+  transition: border-color 0.2s;
+}
+.testi-card:hover {
+  border-color: #E8152A;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #3A3A3A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  color: #F2F2F2;
+  flex-shrink: 0;
+}
+
+/* ── FAQ ── */
+.faq-item {
+  border: 1px solid #3A3A3A;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.faq-item.open {
+  border-color: #E8152A;
+}
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 1.4rem;
+  cursor: pointer;
+  text-align: left;
+  color: #F2F2F2;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+.faq-q:hover {
+  color: #E8152A;
+}
+.faq-icon {
+  font-size: 1.2rem;
+  color: #888888;
+  transition: transform 0.25s;
+  flex-shrink: 0;
+}
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+  color: #E8152A;
+}
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.2s;
+  padding: 0 1.4rem;
+  font-size: 0.92rem;
+  color: #888888;
+  line-height: 1.7;
+}
+
+.faq-item.open .faq-a{
+
+max-height:400px;
+
+padding:0 1.4rem 1.2rem;
+
+animation:fadeAnswer .5s ease;
+
+}
+
+@keyframes fadeAnswer{
+
+from{
+
+opacity:0;
+
+transform:translateY(-10px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ── CONTACT ── */
+.contact-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #E8152A;
+  margin-bottom: 0.4rem;
+}
+.form-input {
+  width: 100%;
+  background: #161616;
+  border: 1px solid #3A3A3A;
+  border-radius: 2px;
+  padding: 0.8rem 1rem;
+  color: #F2F2F2;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input{
+
+transition:.3s;
+
+}
+
+.form-input:focus{
+
+border-color:#E8152A;
+
+box-shadow:0 0 15px rgba(232,21,42,.25);
+
+}
+
+.section-title{
+
+transition:.4s;
+
+}
+
+.section-title:hover{
+
+letter-spacing:.06em;
+
+color:#E8152A;
+
+}
+
+.form-input::placeholder {
+  color: #888888;
+}
+
+/* ── FOOTER ── */
+.footer-col-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #E8152A;
+  margin-bottom: 1rem;
+}
+.footer-link {
+  font-size: 0.88rem;
+  color: #888888;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-link:hover {
+  color: #F2F2F2;
+}
+
+/* ── REDUCE MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+/* ==========================
+      IMAGE ZOOM EFFECT
+========================== */
+
+.class-img,
+.trainer-img{
+
+    transition: transform .6s ease;
+
+}
+
+.class-card:hover .class-img{
+
+    transform:scale(1.08);
+
+}
+
+.trainer-card:hover .trainer-img{
+
+    transform:scale(1.06);
+
+}
