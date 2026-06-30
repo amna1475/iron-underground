@@ -216,13 +216,18 @@ function revealSections() {
 window.addEventListener("scroll", revealSections);
 window.addEventListener("load", revealSections);
 
-const mapFrame = document.getElementById('gym-map-frame');
+(function () {
+  const mapFrame = document.getElementById('gym-map-frame');
+  if (!mapFrame) return;
+
   const mapObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         mapFrame.src = mapFrame.dataset.src;
         mapObserver.unobserve(mapFrame);
       }
     });
   }, { rootMargin: '200px' });
+
   mapObserver.observe(mapFrame);
+})();
