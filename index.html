@@ -96,8 +96,8 @@
       </h1>
       <p class="text-fog font-light text-lg max-w-md mb-8 leading-relaxed">No mirrors. No fluff. Just raw iron, serious athletes, and a community that pushes harder than anywhere else in Houston.</p>
       <div class="flex gap-5 flex-wrap mt-10">
-        <a href="#membership" class="btn-primary">Start Training</a>
-        <a href="#classes"    class="btn-outline">See Programs</a>
+        <a href="#membership" class="btn-primary">Start 1-day Free Trial</a>
+        <a href="#classes"    class="btn-outline">See More Programs</a>
       </div>
     </div>
     <hr>
@@ -105,19 +105,19 @@
     <!-- Stats bar -->
     <div class="bottom-10 left-6 md:left-12 right-6 flex flex-wrap gap-8 md:gap-12 border-t border-muted pt-6 z-10 mt-40 reveal">
       <div>
-        <div class="font-display text-4xl text-offwhite leading-none">12<span class="text-red">+</span></div>
+        <div class="font-display text-6xl text-offwhite leading-none">12<span class="text-red">+</span></div>
         <div class="text-xs tracking-[0.2em] uppercase text-smoke mt-1">Years Underground</div>
       </div>
       <div>
-        <div class="font-display text-4xl text-offwhite leading-none">2<span class="text-red">k</span></div>
+        <div class="font-display text-6xl text-offwhite leading-none">2<span class="text-red">k</span></div>
         <div class="text-xs tracking-[0.2em] uppercase text-smoke mt-1">Active Members</div>
       </div>
       <div>
-        <div class="font-display text-4xl text-offwhite leading-none">18</div>
+        <div class="font-display text-6xl text-offwhite leading-none">18</div>
         <div class="text-xs tracking-[0.2em] uppercase text-smoke mt-1">Expert Trainers</div>
       </div>
       <div>
-        <div class="font-display text-4xl text-offwhite leading-none">24<span class="text-red">/7</span></div>
+        <div class="font-display text-6xl text-offwhite leading-none">24<span class="text-red">/7</span></div>
         <div class="text-xs tracking-[0.2em] uppercase text-smoke mt-1">Access Available</div>
       </div>
     </div>
@@ -346,74 +346,90 @@
 
 
   <!-- ── MEMBERSHIP ── -->
-  <section id="membership" class="bg-char px-6 md:px-12 py-24 reveal">
-    <div class="section-eyebrow">Pricing</div>
-    <h2 class="section-title">CHOOSE YOUR<br>PLAN</h2>
-    <p class="text-fog max-w-md leading-loose mb-12">No contracts, no hidden fees. Cancel anytime. Just show up and lift.</p>
+  <!-- ── MEMBERSHIP ── -->
+<section id="membership" class="bg-char px-6 md:px-12 py-24 reveal">
+  <div class="section-eyebrow">Pricing</div>
+  <h2 class="section-title">CHOOSE YOUR<br>PLAN</h2>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-    <div class="grid sm:grid-cols-3 gap-6 items-start">
-
-      <!-- Day Pass -->
-      <div class="plan-card">
-        <div class="font-head text-xs tracking-widest uppercase text-smoke mb-4">Day Pass</div>
-        <div class="flex items-start gap-1 mb-5">
-          <span class="font-head text-xl text-fog pt-2">$</span>
-          <span class="font-display text-7xl text-offwhite leading-none">15</span>
-          <span class="text-smoke text-sm self-end pb-2">/ visit</span>
-        </div>
-        <ul class="plan-features mb-7">
-          <li class="check">Full gym floor access</li>
-          <li class="check">Group class (1 session)</li>
-          <li class="cross">Personal locker</li>
-          <li class="cross">24/7 key card access</li>
-          <li class="cross">Guest privileges</li>
-          <li class="cross">Nutrition consultation</li>
-        </ul>
-        <button class="plan-btn-outline w-full" onclick="alert('Redirecting to purchase…')">Buy Pass</button>
+    <!-- Free Trial (featured) -->
+    <div class="plan-card border-red relative flex flex-col" style="background: linear-gradient(160deg, rgba(232,21,42,0.07) 0%, #161616 60%)">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-red text-offwhite font-head text-xs tracking-widest uppercase px-4 py-1 rounded-b">Most Popular</div>
+      <div class="font-head text-xs tracking-widest uppercase text-smoke mb-4 mt-4">Free Trial</div>
+      <div class="flex items-start gap-1 mb-5">
+        <span class="font-display text-7xl text-offwhite leading-none">$0</span>
+        <span class="text-smoke text-sm self-end pb-2">/ 1 day</span>
       </div>
-
-      <!-- Monthly (featured) -->
-      <div class="plan-card border-red relative" style="background: linear-gradient(160deg, rgba(232,21,42,0.07) 0%, #161616 60%)">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-red text-offwhite font-head text-xs tracking-widest uppercase px-4 py-1 rounded-b">Most Popular</div>
-        <div class="font-head text-xs tracking-widest uppercase text-smoke mb-4 mt-4">Monthly Member</div>
-        <div class="flex items-start gap-1 mb-5">
-          <span class="font-head text-xl text-fog pt-2">$</span>
-          <span class="font-display text-7xl text-offwhite leading-none">59</span>
-          <span class="text-smoke text-sm self-end pb-2">/ month</span>
-        </div>
-        <ul class="plan-features mb-7">
-          <li class="check">Unlimited gym access</li>
-          <li class="check">Unlimited group classes</li>
-          <li class="check">Personal locker</li>
-          <li class="check">24/7 key card access</li>
-          <li class="check">1 guest pass / month</li>
-          <li class="cross">Nutrition consultation</li>
-        </ul>
-        <button class="plan-btn-solid w-full" onclick="alert('Redirecting to sign up…')">Join Now</button>
-      </div>
-
-      <!-- Annual -->
-      <div class="plan-card">
-        <div class="font-head text-xs tracking-widest uppercase text-smoke mb-4">Elite Annual</div>
-        <div class="flex items-start gap-1 mb-5">
-          <span class="font-head text-xl text-fog pt-2">$</span>
-          <span class="font-display text-7xl text-offwhite leading-none">49</span>
-          <span class="text-smoke text-sm self-end pb-2">/ month</span>
-        </div>
-        <ul class="plan-features mb-7">
-          <li class="check">Unlimited gym access</li>
-          <li class="check">Unlimited group classes</li>
-          <li class="check">Personal locker</li>
-          <li class="check">24/7 key card access</li>
-          <li class="check">Unlimited guest passes</li>
-          <li class="check">Monthly nutrition consult</li>
-        </ul>
-        <button class="plan-btn-outline w-full" onclick="alert('Redirecting to sign up…')">Go Annual</button>
-      </div>
-
+      <ul class="plan-features mb-7 flex-1">
+        <li class="check">Full gym floor access</li>
+        <li class="check">1 group class</li>
+        <li class="cross">Personal locker</li>
+        <li class="cross">24/7 key card access</li>
+        <li class="cross">Guest privileges</li>
+        <li class="cross">Nutrition consultation</li>
+      </ul>
+      <button class="plan-btn-solid w-full" onclick="alert('Redirecting to claim your free trial…')">Claim Free Day</button>
     </div>
-  </section>
 
+    <!-- Day Pass -->
+    <div class="plan-card flex flex-col">
+      <div class="font-head text-xs tracking-widest uppercase text-smoke mb-4">Day Pass</div>
+      <div class="flex items-start gap-1 mb-5">
+        <span class="font-head text-xl text-fog pt-2">$</span>
+        <span class="font-display text-7xl text-offwhite leading-none">15</span>
+        <span class="text-smoke text-sm self-end pb-2">/ visit</span>
+      </div>
+      <ul class="plan-features mb-7 flex-1">
+        <li class="check">Full gym floor access</li>
+        <li class="check">Group class (1 session)</li>
+        <li class="cross">Personal locker</li>
+        <li class="cross">24/7 key card access</li>
+        <li class="cross">Guest privileges</li>
+        <li class="cross">Nutrition consultation</li>
+      </ul>
+      <button class="plan-btn-outline w-full" onclick="alert('Redirecting to purchase…')">Buy Pass</button>
+    </div>
+
+    <!-- Monthly -->
+    <div class="plan-card flex flex-col">
+      <div class="font-head text-xs tracking-widest uppercase text-smoke mb-4">Monthly Member</div>
+      <div class="flex items-start gap-1 mb-5">
+        <span class="font-head text-xl text-fog pt-2">$</span>
+        <span class="font-display text-7xl text-offwhite leading-none">59</span>
+        <span class="text-smoke text-sm self-end pb-2">/ month</span>
+      </div>
+      <ul class="plan-features mb-7 flex-1">
+        <li class="check">Unlimited gym access</li>
+        <li class="check">Unlimited group classes</li>
+        <li class="check">Personal locker</li>
+        <li class="check">24/7 key card access</li>
+        <li class="check">1 guest pass / month</li>
+        <li class="cross">Nutrition consultation</li>
+      </ul>
+      <button class="plan-btn-outline w-full" onclick="alert('Redirecting to sign up…')">Join Now</button>
+    </div>
+
+    <!-- Annual -->
+    <div class="plan-card flex flex-col">
+      <div class="font-head text-xs tracking-widest uppercase text-smoke mb-4">Elite Annual</div>
+      <div class="flex items-start gap-1 mb-5">
+        <span class="font-head text-xl text-fog pt-2">$</span>
+        <span class="font-display text-7xl text-offwhite leading-none">49</span>
+        <span class="text-smoke text-sm self-end pb-2">/ month</span>
+      </div>
+      <ul class="plan-features mb-7 flex-1">
+        <li class="check">Unlimited gym access</li>
+        <li class="check">Unlimited group classes</li>
+        <li class="check">Personal locker</li>
+        <li class="check">24/7 key card access</li>
+        <li class="check">Unlimited guest passes</li>
+        <li class="check">Monthly nutrition consult</li>
+      </ul>
+      <button class="plan-btn-outline w-full" onclick="alert('Redirecting to sign up…')">Go Annual</button>
+    </div>
+
+  </div>
+</section>
 
   <!-- ── TESTIMONIALS ── -->
   <section id="testimonials" class="bg-dark px-6 md:px-12 py-24 reveal">
@@ -606,49 +622,73 @@
 
 
   <!-- ── FOOTER ── -->
-  <footer class="bg-[#080808] border-t border-muted px-6 md:px-12 pt-14 pb-8 reveal">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-10">
-      <div class="col-span-2 md:col-span-1">
-        <span class="font-display text-3xl text-offwhite tracking-wider block mb-3">IRON <span class="text-red">UNDERGROUND</span></span>
-        <p class="text-smoke text-sm leading-relaxed max-w-xs">Houston's premier hardcore training facility. No fluff. Just iron, sweat, and results since 2011.</p>
-      </div>
+  <footer class="bg-black border-t border-muted">
+
+  <!-- Full-width Map -->
+  <div class="w-full" style="height:320px;">
+    <iframe
+    id="gym-map-frame"
+    data-src="https://www.google.com/maps?q=Iron+Underground+Gym,+4200+South+Loop+E,+Houston,+TX+77087&output=embed"
+    width="100%" height="100%" style="border:0; display:block; filter: grayscale(1) invert(0.92) contrast(0.9); background:#161616;"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    title="Iron Underground Gym location map">
+  </iframe>
+  </div>
+
+  <div class="px-6 md:px-12 pt-16 pb-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+      <!-- Brand -->
       <div>
-        <div class="footer-col-title">Quick Links</div>
-        <ul class="flex flex-col gap-2">
-          <li><a href="#about"      class="footer-link">About Us</a></li>
-          <li><a href="#classes"    class="footer-link">Programs</a></li>
-          <li><a href="#trainers"   class="footer-link">Trainers</a></li>
-          <li><a href="#schedule"   class="footer-link">Schedule</a></li>
-          <li><a href="#membership" class="footer-link">Membership</a></li>
+        <span class="font-display text-2xl text-offwhite tracking-wide">IRON <span class="text-red">UNDERGROUND</span></span>
+        <p class="text-smoke text-sm leading-relaxed mt-3 max-w-[220px]">Houston's premier hardcore training facility. No fluff. Just iron, sweat, and results since 2011.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <div class="font-head text-xs tracking-widest uppercase text-red mb-4">Quick Links</div>
+        <ul class="flex flex-col gap-2 text-sm text-smoke">
+          <li><a href="#about" class="hover:text-offwhite transition-colors">About Us</a></li>
+          <li><a href="#classes" class="hover:text-offwhite transition-colors">Programs</a></li>
+          <li><a href="#trainers" class="hover:text-offwhite transition-colors">Trainers</a></li>
+          <li><a href="#schedule" class="hover:text-offwhite transition-colors">Schedule</a></li>
+          <li><a href="#membership" class="hover:text-offwhite transition-colors">Membership</a></li>
         </ul>
       </div>
+
+      <!-- Programs -->
       <div>
-        <div class="footer-col-title">Programs</div>
-        <ul class="flex flex-col gap-2">
-          <li><a href="#classes" class="footer-link">Powerlifting</a></li>
-          <li><a href="#classes" class="footer-link">Olympic Lifting</a></li>
-          <li><a href="#classes" class="footer-link">Strongman</a></li>
-          <li><a href="#classes" class="footer-link">Hypertrophy</a></li>
-          <li><a href="#classes" class="footer-link">Personal Training</a></li>
+        <div class="font-head text-xs tracking-widest uppercase text-red mb-4">Programs</div>
+        <ul class="flex flex-col gap-2 text-sm text-smoke">
+          <li><a href="#classes" class="hover:text-offwhite transition-colors">Powerlifting</a></li>
+          <li><a href="#classes" class="hover:text-offwhite transition-colors">Olympic Lifting</a></li>
+          <li><a href="#classes" class="hover:text-offwhite transition-colors">Strongman</a></li>
+          <li><a href="#classes" class="hover:text-offwhite transition-colors">Hypertrophy</a></li>
+          <li><a href="#classes" class="hover:text-offwhite transition-colors">Personal Training</a></li>
         </ul>
       </div>
+
+      <!-- Contact -->
       <div>
-        <div class="footer-col-title">Contact</div>
-        <ul class="flex flex-col gap-2">
-          <li><a href="tel:7135550182"               class="footer-link">(713) 555-0182</a></li>
-          <li><a href="mailto:info@ironundergroundgym.com" class="footer-link">info@ironunderground...</a></li>
-          <li><a href="#contact"                     class="footer-link">4200 South Loop E, TX</a></li>
+        <div class="font-head text-xs tracking-widest uppercase text-red mb-4">Contact</div>
+        <ul class="flex flex-col gap-2 text-sm text-smoke">
+          <li><a href="tel:+17135550182" class="hover:text-offwhite transition-colors">(713) 555-0182</a></li>
+          <li><a href="mailto:info@ironundergroundgym.com" class="hover:text-offwhite transition-colors">info@ironundergroundgym.com</a></li>
+          <li>4200 South Loop E, Houston TX</li>
+          <li><a href="#" class="hover:text-offwhite transition-colors">@ironundergroundgym</a></li>
         </ul>
       </div>
+
     </div>
-    <div class="border-t border-muted pt-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-smoke text-xs">
+
+    <div class="border-t border-muted pt-6 flex flex-wrap justify-between items-center gap-4 text-sm text-smoke">
       <span>© 2025 Iron Underground Gym · Houston, TX · All Rights Reserved</span>
-      <span>
-        <a href="#" class="hover:text-red transition-colors">Privacy Policy</a> ·
-        <a href="#" class="hover:text-red transition-colors">Terms of Use</a>
-      </span>
+      <span><a href="#" class="hover:text-red transition-colors">Privacy Policy</a> · <a href="#" class="hover:text-red transition-colors">Terms of Use</a></span>
     </div>
-  </footer>
+  </div>
+
+</footer>
 
 
   <!-- Back to Top -->

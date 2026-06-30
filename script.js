@@ -215,3 +215,14 @@ function revealSections() {
 
 window.addEventListener("scroll", revealSections);
 window.addEventListener("load", revealSections);
+
+const mapFrame = document.getElementById('gym-map-frame');
+  const mapObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        mapFrame.src = mapFrame.dataset.src;
+        mapObserver.unobserve(mapFrame);
+      }
+    });
+  }, { rootMargin: '200px' });
+  mapObserver.observe(mapFrame);
